@@ -4,8 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.intellectualsites</groupId>
-    <artifactId>Pipeline</artifactId>
+    <parent>
+        <artifactId>cloud</artifactId>
+        <groupId>com.intellectualsites</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>cloud-pipeline</artifactId>
     <version>1.5.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <inceptionYear>2020</inceptionYear>
@@ -15,7 +20,7 @@
             <url>https://raw.githubusercontent.com/Sauilitired/Rörledning/master/LICENSE</url>
         </license>
     </licenses>
-    <name>Rörledning</name>
+
     <description>Services for Java</description>
     <properties>
         <java.version>1.8</java.version>
@@ -112,17 +117,6 @@
         </plugins>
     </build>
     <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.6.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>jsr305</artifactId>
-            <version>3.0.2</version>
-        </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
