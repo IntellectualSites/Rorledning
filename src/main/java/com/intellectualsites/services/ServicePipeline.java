@@ -27,7 +27,12 @@ import com.google.common.reflect.TypeToken;
 import com.intellectualsites.services.types.Service;
 
 import javax.annotation.Nonnull;
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.function.Predicate;
 
@@ -114,7 +119,7 @@ public final class ServicePipeline {
                             String.format("No service registered for type '%s'", type.toString()));
                 }
                 repository.<Service>registerImplementation(serviceEntry.getKey(),
-                        Collections.emptyList());
+                                                           Collections.emptyList());
             }
         }
         return this;

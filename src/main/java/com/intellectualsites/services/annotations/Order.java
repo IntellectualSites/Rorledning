@@ -37,5 +37,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Order {
 
+    /**
+     * The priority of the implementation
+     *
+     * @return Priority
+     */
     ExecutionOrder value() default ExecutionOrder.SOON;
 }

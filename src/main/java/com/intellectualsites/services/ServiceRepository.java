@@ -28,7 +28,11 @@ import com.intellectualsites.services.annotations.Order;
 import com.intellectualsites.services.types.Service;
 
 import javax.annotation.Nonnull;
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.function.Predicate;
 
 /**
@@ -84,6 +88,8 @@ public final class ServiceRepository<Context, Response> {
 
     /**
      * Used to store {@link Service} implementations together with their state
+     *
+     * @param <T> Service type
      */
     final class ServiceWrapper<T extends Service<Context, Response>>
             implements Comparable<ServiceWrapper<T>> {
@@ -136,9 +142,9 @@ public final class ServiceRepository<Context, Response> {
         @Override
         public int compareTo(@Nonnull final ServiceWrapper<T> other) {
             return Comparator.<ServiceWrapper<T>>comparingInt(
-                    wrapper -> wrapper.isDefaultImplementation() ?
-                            Integer.MIN_VALUE :
-                            Integer.MAX_VALUE).thenComparingInt(wrapper -> wrapper.executionOrder.ordinal())
+                    wrapper -> wrapper.isDefaultImplementation()
+                               ? Integer.MIN_VALUE
+                               : Integer.MAX_VALUE).thenComparingInt(wrapper -> wrapper.executionOrder.ordinal())
                     .thenComparingInt(wrapper -> wrapper.registrationOrder).compare(this, other);
         }
 

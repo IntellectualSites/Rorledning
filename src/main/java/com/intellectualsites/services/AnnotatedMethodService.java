@@ -60,7 +60,7 @@ class AnnotatedMethodService<Context, Result> implements Service<Context, Result
   @Nullable
   @Override
   @SuppressWarnings("unchecked")
-  public Result handle(@Nonnull Context context) {
+  public Result handle(@Nonnull final Context context) {
     try {
       return (Result) this.methodHandle.invoke(this.instance, context);
     } catch (final Throwable throwable) {

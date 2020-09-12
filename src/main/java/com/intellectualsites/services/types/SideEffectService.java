@@ -23,7 +23,6 @@
 //
 package com.intellectualsites.services.types;
 
-import com.intellectualsites.services.PipelineException;
 import com.intellectualsites.services.State;
 
 import javax.annotation.Nonnull;
@@ -47,10 +46,10 @@ public interface SideEffectService<Context> extends Service<Context, State> {
    * chain will get to act on the context. Otherwise the execution halts, and the provided response
    * is the final response.
    * @throws Exception Any exception that occurs during the handling can be thrown, and will be
-   *                   wrapped by a {@link PipelineException}
+   *                   wrapped by a {@link com.intellectualsites.services.PipelineException}
    */
   @Override
   @Nonnull
-  State handle(@Nonnull final Context context) throws Exception;
+  State handle(@Nonnull Context context) throws Exception;
 
 }

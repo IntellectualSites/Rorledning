@@ -23,10 +23,8 @@
 //
 package com.intellectualsites.services;
 
-import com.intellectualsites.services.types.Service;
-
 /**
- * This indicates how a {@link Service} responded to a given context
+ * This indicates how a {@link com.intellectualsites.services.types.Service} responded to a given context
  */
 public enum State {
     /**

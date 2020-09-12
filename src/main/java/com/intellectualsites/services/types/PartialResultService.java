@@ -35,6 +35,7 @@ import java.util.Map;
  *
  * @param <Context> Context type
  * @param <Result>  Result type
+ * @param <Chunked> Chunk request context
  */
 public interface PartialResultService<Context, Result, Chunked extends ChunkedRequestContext<Context, Result>>
     extends Service<Chunked, Map<Context, Result>> {
